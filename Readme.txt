@@ -1,24 +1,22 @@
 Command Line Interpreter. C. I wrote from scratch command line interpreter based on Unix Shell. It can work with a process pipeline and a subshell. Some Unix commands such as ls, cat, pwd, cd, cmp, echo, and ln are implemented independently (repository Unix-commands). The input string is divided into words and symbols (list.c), then a tree (tree.c) is built from these words and symbols. When descending the tree, the functions of Unix commands are executed one after the other (exec.c).
 
-// Реализация интерпретатора командной строки
 
 To run:
-//Запуск:
 	1. make
 	2. ./prog
-	3. Then print commands //Далее вводить команды
-	4. To exit: crtl-D // Для выхода: ctrl-D
+	3. Then print commands
+	4. To exit: crtl-D
 
-Syntax // Синтаксис:
-	implemented using an L-graph // с помощью L-графа, файл L_graph.pdf
+Syntax:
+	implemented using an L-graph
 
 Implemented // Реализовано:
 	1. >, >>, <
-	2. |, if cd exist, we ignore it // если внутри cd - игнорируем cd
+	2. |, if cd exist, we ignore it
 	3. ;
-	4. &, message after ending of background process // по завершении вывод сообщения о завершении фонового процесса
-	5. (),  subshell // сабшелл
-	6. &&, ||, logic operations // логические операции
+	4. &, message after ending of background process
+	5. (),  subshell
+	6. &&, ||, logic operations
 
 Тесты:
 	1. cd ..
@@ -64,3 +62,6 @@ Implemented // Реализовано:
     	   15. sleep 3|sleep 4 &
                (conveyor is executed in background, with ps command we can see which processes are still alive)
                (конвейер выполняется в фоновом режиме, по ps можно смотреть, какие процессы есть)
+
+
+Интерпретатор модельного языка ВМК МГУ 2021, группы 209, 212
